@@ -11,8 +11,15 @@ class SearchBar extends Component {
           <h1>File Uploader</h1>
         </div>
         <div className="SearchBar__controls">
-          <SearchBox />
-          <FilterOptions />
+          <SearchBox
+            searchTerm={this.props.searchTerm}
+            handleUpdate={this.props.handleUpdate}
+            handleFilterChange={(option) => this.updateFilterOption(option)}
+          />
+          <FilterOptions
+            filterOption={this.props.filterOption}
+            handleFilterChange={this.props.handleFilterChange}
+          />
         </div>
       </div>
     );
